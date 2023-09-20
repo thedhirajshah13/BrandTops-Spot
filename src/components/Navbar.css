@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  background-color: #A0C49D;
+  display: flex;
+  justify-content: space-between;
+  border: 0.2px solid #000;
+  font-family: "Times New Roman", Times, serif;
+}
+.nav-logo img {
+  width: 300px;
+  height: 100px;
+  font-weight: bolder;
+  mix-blend-mode: multiply;
+}
+.nav-item1,
+.nav-item2 {
+  margin: 20px;
+  font-size: 20px;
+  /* color: black; */
+  /* padding: 10px; */
+}
