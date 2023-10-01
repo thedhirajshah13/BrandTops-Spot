@@ -1,18 +1,14 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import Cartpage from '../components/Cartpage'
-
-
+import React from "react";
+import Navbar from "../components/Navbar";
+import Cartpage from "../components/Cartpage";
 
 const Cart = () => {
   return (
     <div>
-    <Navbar/>
-    <Cartpage/>
- 
-  
+      <Navbar />
+      <Cartpage />
     </div>
-  )
-}
+  );
+};
 
-export default Cart
+export default Cart;

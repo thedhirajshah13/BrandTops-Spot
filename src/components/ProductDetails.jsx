@@ -18,7 +18,7 @@ const ProductDetails = () => {
 
   return (
     <div className="single-page">
-{/* Mapping Data ... */}
+      {/* Mapping Data ... */}
       {data.map((prod) => (
         <div>
           <div className="details">
@@ -52,8 +52,8 @@ const ProductDetails = () => {
                     style={{ color: "red" }}
                     onClick={() => {
                       dispatch({
-                        type:'REMOVE_FROM_CART',
-                        payload:prod.id,
+                        type: "REMOVE_FROM_CART",
+                        payload: prod.id,
                       });
                     }}
                   >
@@ -66,11 +66,11 @@ const ProductDetails = () => {
                         type: "ADD_TO_CART",
                         payload: {
                           id: prod.id,
-                      title: prod.title,
-                      quantity:1,
-                      img:prod.thumbnail,
-                      price:prod.price,
-                      description:prod.description
+                          title: prod.title,
+                          quantity: 1,
+                          img: prod.thumbnail,
+                          price: prod.price,
+                          description: prod.description,
                         },
                       });
                     }}

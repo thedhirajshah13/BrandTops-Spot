@@ -5,8 +5,7 @@ import EmptyCart from "../asset/EmptyCart.jpg";
 import { Link } from "react-router-dom";
 
 const Cartpage = () => {
-  const { Cart, dispatch, total} = useContext(ContextData);
-  
+  const { Cart, dispatch, total } = useContext(ContextData);
 
   // console.log(Cart);
   function handleQuantityPlus(n) {
@@ -89,19 +88,20 @@ const Cartpage = () => {
           </div>
           <div className="billing_section">
             <h2>Billing</h2>
-           
+
             <div className="billing">
-           
               {Cart.map((cartitem) => (
                 <div key={cartitem.id} className="billing_portion">
                   <img src={cartitem.img} alt={cartitem.id} />
-                  <h3 >${cartitem.price * cartitem.quantity}</h3>
+                  <h3>${cartitem.price * cartitem.quantity}</h3>
                   <h3>{cartitem.quantity}</h3>
                 </div>
               ))}
             </div>
             <div>
-              <h3>Total_Cost - <span>${total}</span></h3>
+              <h3>
+                Total_Cost - <span>${total}</span>
+              </h3>
             </div>
           </div>
         </div>

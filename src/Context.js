@@ -5,7 +5,6 @@ import { reducerfunction } from "./Reducer/reducer";
 export const ContextData = createContext();
 
 const Context = ({ children }) => {
-  const [total, settotal]=useState(0)
   // For Selecting category...
   const [categories, setcategories] = useState("All");
   // Reducer....
@@ -13,9 +12,10 @@ const Context = ({ children }) => {
     products: [],
     Cart: [],
     Category: [],
+    total: 0,
   });
   // Destructring Reducer State....
-  const { products, Cart, Category } = state;
+  const { products, Cart, Category, total } = state;
 
   // Fetching All the Data and Setting Products Value...
   async function fetching() {
@@ -42,21 +42,28 @@ const Context = ({ children }) => {
       type: "CATEGORY",
       payload: categoriesResult,
     });
-  }
 
- 
+    // NEEDS TO BE CHANGES THIS IS A BUG, one of the main bug..
+  }
 
   // UseEffect for Calling All the API's...
   useEffect(() => {
     fetching();
     Categorys();
-  
   }, [categories]);
- 
-console.log('heu',children)
+
+  console.log("heu", children);
   return (
     <ContextData.Provider
-      value={{ Category, categories, Cart, dispatch, products, setcategories, total }}
+      value={{
+        Category,
+        categories,
+        Cart,
+        dispatch,
+        products,
+        setcategories,
+        total,
+      }}
     >
       {children}
     </ContextData.Provider>

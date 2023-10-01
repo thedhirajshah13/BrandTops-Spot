@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-import logo from '../asset/logon.png'
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import logo from "../asset/logon.png";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 import { ContextData } from "../Context";
 
@@ -27,7 +27,6 @@ const Navbar = () => {
           to=""
           style={{ padding: "20px", textDecoration: "none", color: "#000" }}
         >
-         
           Cart
         </Link>
       </div>
@@ -51,20 +50,15 @@ const Navbar = () => {
           to="/cart"
           style={{ padding: "20px", textDecoration: "none", color: "#000" }}
         >
-          <ShoppingCartOutlinedIcon
-            style={{
-              
-            }}
-          />
+          <ShoppingCartOutlinedIcon style={{}} />
           <span
             style={{
-              position:'absolute',
-              top:'5px',
-              left:'96.6%',
-            
+              position: "absolute",
+              top: "5px",
+              left: "96.6%",
+
               color: "red",
-             
-             
+
               height: "20px",
             }}
           >
