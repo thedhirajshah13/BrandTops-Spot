@@ -1,0 +1,59 @@
+
+*{
+    margin: 0;
+    padding: 0;
+   
+}
+.banner{
+    width: 100%;
+    height: 828px;
+    display: flex;
+    justify-content: space-between;
+}
+.banner .bannerimg{
+width:55%;
+height: 697px;
+}
+.banner .bannerimg img{
+    width: 100%;
+    height: 697px;
+}
+.banner .bannerdic{
+    width: 45%;
+    height: 697px;
+    background-color: #D2B48C;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    
+    
+}
+.banner h1{
+    padding:0 0 5px 0;
+    line-height: 2;
+    font-size: 60px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.banner h3{
+    color: #848484;
+    font-size: 40px;
+    align-items: center;
+    text-align: center;
+    
+    
+
+}
+.banner button{
+    background: transparent;
+    margin-top: 30px;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #848484;
+}
+
+

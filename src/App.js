@@ -1,19 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import Home from "./pages/Home";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Single from "./pages/Single";
-import Cart from "./pages/Cart";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  Outlet,
+} from "react-router-dom";
+
+import Authentication from "./pages/Authetiction.js";
+import State from "./context/State.js";
+
+const PrivateRoute = ({ authenticated }) => {
+  return authenticated ? <Outlet /> : <Navigate replace to="/" />;
+};
 
 const App = () => {
+  const [authenticated, setauthenticated] = useState(false);
   return (
     <BrowserRouter>
-      <Routes>
-        <Route index element={<Home />}></Route>
+      <State>
+        <Authentication
+          authenticated={authenticated}
+          setauthenticated={setauthenticated}
+        />
 
-        <Route path="single/:id" element={<Single />}></Route>
-        <Route path="cart/single/:id" element={<Single />}></Route>
-        <Route path="cart" element={<Cart />}></Route>
-      </Routes>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <PrivateRoute authenticated={authenticated}></PrivateRoute>
+            }
+          >
+            <Route
+              path="/home"
+              element={
+                <Home
+                  authenticated={authenticated}
+                  setauthenticated={setauthenticated}
+                />
+              }
+            ></Route>
+          </Route>
+        </Routes>
+      </State>
     </BrowserRouter>
   );
 };

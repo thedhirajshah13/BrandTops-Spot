@@ -3,70 +3,54 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import logo from "../asset/logon.png";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import ClearIcon from "@mui/icons-material/Clear";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import Person3Icon from "@mui/icons-material/Person3";
+import SearchIcon from "@mui/icons-material/Search";
+import Context from "../context/Context";
 
-import { ContextData } from "../Context";
+const Navbar = ({ authenticated, setauthenticated }) => {
+  const { userDetails } = useContext(Context);
+  // console.log(userDetails)
+  function hadlelogout() {
+    setauthenticated(false);
+    alert("logedout");
+  }
 
-const Navbar = () => {
-  const { Cart } = useContext(ContextData);
   return (
-    <div className="navbar">
-      <div className="nav-item1">
-        <Link
-          to="/"
-          style={{ padding: "20px", textDecoration: "none", color: "#000" }}
-        >
-          Home
-        </Link>
-        <Link
-          to=""
-          style={{ padding: "20px", textDecoration: "none", color: "#000" }}
-        >
-          Carrier
-        </Link>
-        <Link
-          to=""
-          style={{ padding: "20px", textDecoration: "none", color: "#000" }}
-        >
-          Cart
-        </Link>
-      </div>
-      <div className="nav-logo">
-        <img src={logo} alt="logo" />
-      </div>
-      <div className="nav-item2">
-        <Link
-          to="/"
-          style={{ padding: "20px", textDecoration: "none", color: "#000" }}
-        >
-          About
-        </Link>
-        <Link
-          to="/Gifts"
-          style={{ padding: "20px", textDecoration: "none", color: "#000" }}
-        >
-          Gifts
-        </Link>
-        <Link
-          to="/cart"
-          style={{ padding: "20px", textDecoration: "none", color: "#000" }}
-        >
-          <ShoppingCartOutlinedIcon style={{}} />
-          <span
-            style={{
-              position: "absolute",
-              top: "5px",
-              left: "96.6%",
+    <>
+      <div className="navbar">
+        <div className="logo">
+          <Link to="/">
+            <img src={logo} alt="logo" />
+          </Link>
+        </div>
+        <div className="navitem">
+          <Link>Home</Link>
 
-              color: "red",
-
-              height: "20px",
-            }}
-          >
-            {Cart.length}
-          </span>
-        </Link>
+          <Link>Explore</Link>
+          <Link>New </Link>
+          <Link>Contact-Us</Link>
+        </div>
+        <div className="search">
+          <p>Search here</p>
+          <Link>{<SearchIcon />}</Link>
+        </div>
+        <div className="profile">
+          <Link>{<FavoriteIcon className="wishbtn" />}</Link>
+          <Link>{<ShoppingCartOutlinedIcon />}</Link>
+          <Link onClick={hadlelogout}>
+            <img src={userDetails.image} alt=<Person3Icon /> />{" "}
+            <span>{userDetails.firstName}</span>
+          </Link>
+        </div>
       </div>
-    </div>
+      <div className="announcement">
+        <p>Invite Friends and get 50% off on your next purchase</p>
+        <span>Invite Now</span>
+        <button>{<ClearIcon />}</button>
+      </div>
+    </>
   );
 };
 

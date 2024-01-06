@@ -1,12 +1,17 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import Categories from "../components/Categories";
 
-const Home = () => {
+import Front from "../components/Front";
+
+const Home = ({ authenticated, setauthenticated }) => {
   return (
     <div>
-      <Navbar />
-      <Categories />
+      <Navbar
+        authenticated={authenticated}
+        setauthenticated={setauthenticated}
+      />
+
+      <Front />
     </div>
   );
 };

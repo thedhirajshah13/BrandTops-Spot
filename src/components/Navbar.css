@@ -1,24 +1,94 @@
 body {
   margin: 0;
   padding: 0;
+  width: 100vw;
+  overflow-x: hidden;
 }
 .navbar {
-  background-color: #A0C49D;
+  width: 100%;
+  height: 80px;
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
-  border: 0.2px solid #000;
-  font-family: "Times New Roman", Times, serif;
+  align-items: center;
+
+  padding: 0 15px;
 }
-.nav-logo img {
-  width: 300px;
-  height: 100px;
-  font-weight: bolder;
-  mix-blend-mode: multiply;
+.navbar a {
+  color: black;
 }
-.nav-item1,
-.nav-item2 {
-  margin: 20px;
-  font-size: 20px;
-  /* color: black; */
-  /* padding: 10px; */
+.navbar .logo img {
+  width: 57px;
+  height: 48px;
+}
+.navbar .navitem {
+  width: 293px;
+  height: 22px;
+}
+.navbar .navitem a {
+  text-decoration: none;
+
+  padding: 0 10px;
+  font-weight: 400;
+}
+.navbar .navitem a:hover {
+  font-weight: 600;
+  scale: 10px;
+}
+.navbar .search {
+  width: 534px;
+  height: 52px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 4px #848484;
+}
+.navbar .profile {
+  width: 263px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+}
+.navbar .profile a {
+  text-decoration: none;
+  padding: 0 10px;
+}
+.wishbtn:hover {
+  color: red;
+}
+/* ANNOUNCEMENT SECTION */
+.announcement {
+  width: 100%;
+  height: 51px;
+  position: relative;
+  background-color: #f9faff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.announcement span {
+  margin: 0 20px;
+  font-weight: 400;
+  color: #00398f;
+}
+.announcement button {
+  border: none;
+  position: absolute;
+  right: 2%;
+  background-color: #f9faff;
+  color: #848484;
+}
+.profile img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.profile a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
 }
