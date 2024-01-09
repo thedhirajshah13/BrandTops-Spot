@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 
 import Front from "../components/Front";
+import Popular from '../components/Popular'
 
 const Home = ({ authenticated, setauthenticated }) => {
   return (
@@ -12,6 +13,7 @@ const Home = ({ authenticated, setauthenticated }) => {
       />
 
       <Front />
+      <Popular/>
     </div>
   );
 };
