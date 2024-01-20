@@ -8,6 +8,8 @@ const State=(props)=>{
     const initialState={
         Product:[],
         Cart:[],
+        Searched:[],
+        recentSearched:[],
 
     }
 

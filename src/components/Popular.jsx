@@ -18,20 +18,16 @@ const Popular = () => {
         type: "FETCH PRODUCT",
         payload: data.products,
       });
+      console.log(data.products);
     }
     
     fetchproduct();
   }, [userDetails]);
 
-  useEffect(()=>{
-    window.scrollTo({
-        top:-100,
-        left: 100,
-        behavior: "smooth",
-      });
-  },[popularPage])
+ 
+    
 
-  console.log(state);
+
 
   return (
     <div className="popular">

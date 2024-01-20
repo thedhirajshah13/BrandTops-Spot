@@ -45,6 +45,34 @@ body {
   padding: 0 15px;
   border-radius: 10px;
   box-shadow: 5px 5px 4px #848484;
+  position: relative;
+}
+.navbar .search input{
+  width: 88%;
+  height: 100%;
+  outline: none;
+  position: absolute;
+  left: 2;
+  border-radius: 10px;
+  box-shadow: 5px 5px 4px #848484;
+  border: none;
+  background-color: #f0f0f0;
+  font-size: 17px;
+}
+.navbar .search input ::placeholder{
+  font-size: 50px;
+}
+.navbar .search button{
+  width: 12%;
+  height: 100%;
+  outline: none;
+  position: absolute;
+  right: 0;
+  border-radius: 10px;
+  box-shadow: 5px 5px 4px #848484;
+  border: none;
+  background-color: #f0f0f0;
+
 }
 .navbar .profile {
   width: 263px;

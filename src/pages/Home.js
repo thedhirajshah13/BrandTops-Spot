@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 
 import Front from "../components/Front";
 import Popular from '../components/Popular'
+import Footer from "../components/Footer";
 
 const Home = ({ authenticated, setauthenticated }) => {
   return (
@@ -14,6 +15,8 @@ const Home = ({ authenticated, setauthenticated }) => {
 
       <Front />
       <Popular/>
+      <Footer/>
+
     </div>
   );
 };

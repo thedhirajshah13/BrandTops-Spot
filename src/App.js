@@ -10,6 +10,8 @@ import {
 
 import Authentication from "./pages/Authetiction.js";
 import State from "./context/State.js";
+import Footer from "./components/Footer.jsx";
+import Search from "./pages/Search.js";
 
 const PrivateRoute = ({ authenticated }) => {
   return authenticated ? <Outlet /> : <Navigate replace to="/" />;
@@ -33,14 +35,22 @@ const App = () => {
             }
           >
             <Route
-              path="/home"
+              path="home"
               element={
                 <Home
                   authenticated={authenticated}
                   setauthenticated={setauthenticated}
                 />
               }
-            ></Route>
+            />
+            <Route
+              path="search"
+              element={<Search/>}
+
+            />
+
+            
+            
           </Route>
         </Routes>
       </State>

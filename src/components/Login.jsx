@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import "./login.css";
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import Context from "../context/Context";
 
 const Login = ({ authenticated, setauthenticated }) => {
@@ -36,7 +36,7 @@ const Login = ({ authenticated, setauthenticated }) => {
         setuserDetails(datadetails);
 
         setauthenticated(true);
-        Navigate("/home");
+        Navigate("home");
         console.log(userDetails);
       } else {
         setauthenticated(false);
@@ -74,6 +74,7 @@ const Login = ({ authenticated, setauthenticated }) => {
           </form>
         </div>
       </div>
+      <Outlet/>
     </>
   );
 };
