@@ -1,0 +1,86 @@
+
+    /* background-color: #f1f3f6; */
+
+.searchedProducts{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.searchedProducts .sidepanel{
+    width: 20%;
+    height: 100%;
+    border: 1px solid black;
+    margin: 0 2px;
+    
+
+}
+.searchedProducts .sidepanel h1{
+    font-size: 25px;
+}
+.searchedProducts .mainpanel{
+    width: 79%;
+    height: 100%;
+    border: 1px solid black;
+    margin: 0 2px;
+    
+  /* background-color: #f0f0f0; */
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: .5%;
+
+  
+  
+ 
+  
+}
+.searchedProducts .mainpanel .searched-card{
+  background-color: #f0f0f0;
+    margin: 2% .5% ;
+  width: 32%;
+  height: 40%;
+  
+ 
+   
+
+}
+
+.searched-card img{
+    width: 100%;
+    height: 70%;
+    aspect-ratio: 3/2;
+  object-fit: contain;
+  border-radius: 10%;
+  display: flex;
+  margin: auto;
+  margin-top: 2%;
+  
+}
+.searched-card img:hover{
+    transform: scale(1.1);
+  }
+  .searched-card .title {
+    margin-top: 5%;
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+  }
+  .searched-card .title span {
+    width: 42%;
+    height: 100%;
+  
+    background-color: #cc0c39;
+    text-align: center;
+    color: white;
+    font-weight: 300;
+  }
+  .searched-card .title h5 {
+    color: #cc0c39;
+    text-align: center;
+  }
+  .searched-card p {
+    margin-top: 4%;
+  
+    font-weight: 500;
+  }
+  

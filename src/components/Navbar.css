@@ -20,6 +20,9 @@ body {
 .navbar .logo img {
   width: 57px;
   height: 48px;
+  aspect-ratio: 2/3;
+  object-fit: contain;
+  
 }
 .navbar .navitem {
   width: 293px;

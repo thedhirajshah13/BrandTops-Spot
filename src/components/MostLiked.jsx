@@ -1,39 +1,21 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from 'react'
+// css has same as popular's css...
 import "./popular.css";
 import Context from "../context/Context";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
-const Popular = () => {
-  const { state, dispatch, userDetails } = useContext(Context);
+const MostLiked=()=>{
+  const {state,dispatch}=useContext(Context);
+  const {Product}=state
+  const[popularPage,setpopularPage]=useState(0);
   const Navigate=useNavigate()
-  const { Product } = state;
-  const [popularPage, setpopularPage] = useState(0);
-  useEffect(() => {
-    async function fetchproduct() {
-      const productData = await fetch(
-        "https://dummyjson.com/products?limit=1000"
-      );
-      const data = await productData.json();
-      dispatch({
-        type: "FETCH PRODUCT",
-        payload: data.products,
-      });
-      console.log(data.products);
-    }
-    
-    fetchproduct();
-  }, [userDetails]);
 
- 
-    
-
-
-
-  return (
-    <div className="popular">
-      <h3>Hot Deals</h3>
+    return(
+        <>
+<div className="popular">
+      <h3>Most Liked</h3>
       <div className="popular-sec">
         {popularPage > 0 ? (
           <button onClick={() => setpopularPage(popularPage - 1)}>
@@ -44,22 +26,22 @@ const Popular = () => {
         )}
 
         {Product.filter(
-          (discountPercentage) => discountPercentage.discountPercentage > 15
+          (rating) => rating.rating > 4.9
         )
           .slice(popularPage * 5, popularPage * 5 + 5)
           .map((prod, id) => (
             <div className="popular-card">
               <img src={prod.images[0]} alt="img" onClick={()=>Navigate(`/productDetails/${prod.id}`)} />
               <div className="title">
-                <span>upto {prod.discountPercentage}% off</span>
-                <h5>Deal Of The Day.</h5>
+                <span style={{backgroundColor:'green', color:'white'}}> {prod.rating}☆</span>
+                <h5 style={{color:'green'}}>Most Trusted.</h5>
               </div>
               <p>{prod.description.slice(0, 30)}...</p>
             </div>
           ))}
         {popularPage <
         Product.filter(
-          (discountPercentage) => discountPercentage.discountPercentage > 15
+          (rating) => rating.rating >   4.9
         ).length /
           5 -
           1 ? (
@@ -71,7 +53,9 @@ const Popular = () => {
         )}
       </div>
     </div>
-  );
-};
+  
+        </>
+    )
+}
 
-export default Popular;
+export default MostLiked;

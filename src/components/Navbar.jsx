@@ -11,7 +11,7 @@ import Context from "../context/Context";
 
 const Navbar = ({ authenticated, setauthenticated }) => {
   const { userDetails, state, dispatch } = useContext(Context);
-  const { Product } = state;
+  const { Product, Cart } = state;
   const [search, setsearch] = useState("");
   const Naviagte=useNavigate()
   // console.log(userDetails)
@@ -70,7 +70,7 @@ Naviagte('/search')
         </div>
         <div className="profile">
           <Link>{<FavoriteIcon className="wishbtn" />}</Link>
-          <Link>{<ShoppingCartOutlinedIcon />}</Link>
+          <Link>{Cart.length}{ <ShoppingCartOutlinedIcon />}</Link>
           <Link onClick={hadlelogout}>
             <img src={userDetails.image} alt=<Person3Icon /> />{" "}
             <span>{userDetails.firstName}</span>

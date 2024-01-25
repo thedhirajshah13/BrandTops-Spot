@@ -1,33 +1,7 @@
-body{
-  margin: 0;
-  padding:0;
-  overflow-x: hidden;
-  overflow-y: hidden;
+/*  */
+img{
+  cursor: pointer;
 }
-.products_place{
-  display: grid;
-  grid-template-columns: 300px 300px 300px 300px;
-  gap: 70px;
-}
-.product{
-  width: 400px;
-  height: 450px;
-  border: 1px solid black;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.product img{
-  width: 300px;
-  height: 400px;
-}
-.products_extra_info{
-  width: 400px;
-  display: flex;
-  justify-content: space-around;
-}
-.buttons{
-  border-radius: 10px;
+button{
+  cursor: pointer;
 }
